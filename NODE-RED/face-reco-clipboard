@@ -1,13 +1,8 @@
 [
     {
-        "id": "22abd194.653d0e",
-        "type": "tab",
-        "label": "Flow 1"
-    },
-    {
-        "id": "e3efd43c.f91368",
+        "id": "6320424a.8ee1ec",
         "type": "exec",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "command": "curl \"192.168.1.3:8080/photo.jpg\" >photo.jpg",
         "addpay": false,
         "append": "",
@@ -19,16 +14,16 @@
         "y": 51.90476131439209,
         "wires": [
             [
-                "7e7f0aff.cf0da4"
+                "365b7ec2.ac1b52"
             ],
             [],
             []
         ]
     },
     {
-        "id": "7e7f0aff.cf0da4",
+        "id": "365b7ec2.ac1b52",
         "type": "file in",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "Snapshot obtained from IP-Camera in \"~/.node-red\" directory",
         "filename": "photo.jpg",
         "format": "",
@@ -37,14 +32,14 @@
         "y": 55.97221517562866,
         "wires": [
             [
-                "d657721.dd6cc9"
+                "f775b9c2.3f0318"
             ]
         ]
     },
     {
-        "id": "d657721.dd6cc9",
+        "id": "f775b9c2.3f0318",
         "type": "switch",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "Is this a valid photo (It checks the downloaded file from camera running on local IP)",
         "property": "payload[0]",
         "propertyType": "msg",
@@ -62,17 +57,17 @@
         "y": 149.66662216186523,
         "wires": [
             [
-                "6350319a.47b59"
+                "a0850235.814df"
             ],
             [
-                "58cc899.d4dd278"
+                "995d4a16.7deb38"
             ]
         ]
     },
     {
-        "id": "6350319a.47b59",
+        "id": "a0850235.814df",
         "type": "template",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "Camera not working",
         "field": "payload",
         "fieldType": "msg",
@@ -83,32 +78,32 @@
         "y": 108.99997520446777,
         "wires": [
             [
-                "fc571732.3c7518"
+                "75f23d2c.9422b4"
             ]
         ]
     },
     {
-        "id": "58cc899.d4dd278",
+        "id": "995d4a16.7deb38",
         "type": "visual-recognition-v3",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "Analyze the image and sends details",
         "apikey": "Uxl-8T0PZOs7n03GLqAh9HB8xtgGHAgslO_sbUM84Tdt",
         "vr-service-endpoint": "https://gateway.watsonplatform.net/visual-recognition/api",
         "image-feature": "detectFaces",
         "lang": "en",
-        "x": 1171.6666564941406,
-        "y": 156.33329343795776,
+        "x": 1143.3333129882812,
+        "y": 199.66662216186523,
         "wires": [
             [
-                "c582be1a.38316",
-                "fc571732.3c7518"
+                "67571f66.94a1b",
+                "75f23d2c.9422b4"
             ]
         ]
     },
     {
-        "id": "8f16453.f4f46b8",
+        "id": "ad1bb2aa.2423",
         "type": "e-mail",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "server": "smtp.gmail.com",
         "port": "465",
         "secure": true,
@@ -119,9 +114,9 @@
         "wires": []
     },
     {
-        "id": "8d53aaea.254978",
+        "id": "9299bf01.67e2f",
         "type": "file in",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "Snapshot photo ",
         "filename": "photo.jpg",
         "format": "",
@@ -129,15 +124,15 @@
         "y": 459.6667594909668,
         "wires": [
             [
-                "b69d8480.a85c28",
-                "8221d1ba.80451"
+                "4e87a338.d27dfc",
+                "1dc056d0.218449"
             ]
         ]
     },
     {
-        "id": "6017cc3d.8971c4",
+        "id": "234c6c7f.b747e4",
         "type": "file in",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "Snapshot photo",
         "filename": "photo.jpg",
         "format": "",
@@ -145,15 +140,15 @@
         "y": 304.7501173019409,
         "wires": [
             [
-                "54f600e4.611b5",
-                "293576d7.9a1a6a"
+                "1161e6f8.3280b9",
+                "86711e7c.795b5"
             ]
         ]
     },
     {
-        "id": "54f600e4.611b5",
+        "id": "1161e6f8.3280b9",
         "type": "function",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "Email-subject: Someone has arrived",
         "func": "\nmsg.topic=\"Someone has arrived\"\nmsg.filename=new Date().toISOString().replace(/T/, ' ').replace(/\\..+/, '')+\".jpg\";\nreturn msg;",
         "outputs": 1,
@@ -162,14 +157,14 @@
         "y": 577.6667108535767,
         "wires": [
             [
-                "8f16453.f4f46b8"
+                "ad1bb2aa.2423"
             ]
         ]
     },
     {
-        "id": "b69d8480.a85c28",
+        "id": "4e87a338.d27dfc",
         "type": "function",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "Email-Subject: Activity is detected",
         "func": "msg.topic=\"Something is moving\"\nmsg.filename=new Date().toISOString().replace(/T/, ' ').replace(/\\..+/, '')+\".jpg\";\n\nreturn msg;",
         "outputs": 1,
@@ -178,14 +173,14 @@
         "y": 680.0832958221436,
         "wires": [
             [
-                "8f16453.f4f46b8"
+                "ad1bb2aa.2423"
             ]
         ]
     },
     {
-        "id": "99089a6f.872438",
+        "id": "fadf5b0.874b1a8",
         "type": "switch",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "Detected motion?",
         "property": "payload",
         "propertyType": "msg",
@@ -202,14 +197,14 @@
         "y": 53.33332061767578,
         "wires": [
             [
-                "511ab06a.0a44f"
+                "f139d0a0.323ad"
             ]
         ]
     },
     {
-        "id": "d9746dec.b71a7",
+        "id": "9d531146.653f3",
         "type": "rpi-gpio in",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "PIR INPUT ON 11",
         "pin": "11",
         "intype": "tri",
@@ -219,14 +214,14 @@
         "y": 120.66665649414062,
         "wires": [
             [
-                "99089a6f.872438"
+                "fadf5b0.874b1a8"
             ]
         ]
     },
     {
-        "id": "511ab06a.0a44f",
+        "id": "f139d0a0.323ad",
         "type": "delay",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "",
         "pauseType": "delay",
         "timeout": "5",
@@ -242,14 +237,14 @@
         "y": 53.00000190734863,
         "wires": [
             [
-                "e3efd43c.f91368"
+                "6320424a.8ee1ec"
             ]
         ]
     },
     {
-        "id": "fc571732.3c7518",
+        "id": "75f23d2c.9422b4",
         "type": "debug",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -260,9 +255,9 @@
         "wires": []
     },
     {
-        "id": "a6c834bd.e5f698",
+        "id": "febf9af6.6049b8",
         "type": "function",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "MORNING",
         "func": "msg.payload=\"Good Morning Welcome to baker and grey\"\nreturn msg;",
         "outputs": 1,
@@ -271,14 +266,14 @@
         "y": 346.4881420135498,
         "wires": [
             [
-                "9324ef01.7b3fc"
+                "70eda4fe.3256ac"
             ]
         ]
     },
     {
-        "id": "8221d1ba.80451",
+        "id": "1dc056d0.218449",
         "type": "function",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "MOTION DETECTED",
         "func": "msg.payload=\"MOTION DETECTED\"\nreturn msg;",
         "outputs": 1,
@@ -287,14 +282,14 @@
         "y": 516.2500228881836,
         "wires": [
             [
-                "9324ef01.7b3fc"
+                "70eda4fe.3256ac"
             ]
         ]
     },
     {
-        "id": "c582be1a.38316",
+        "id": "67571f66.94a1b",
         "type": "switch",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "Is any object classified?",
         "property": "result.images[0].faces[0]",
         "propertyType": "msg",
@@ -313,17 +308,17 @@
         "y": 227.33337211608887,
         "wires": [
             [
-                "6017cc3d.8971c4"
+                "234c6c7f.b747e4"
             ],
             [
-                "8d53aaea.254978"
+                "9299bf01.67e2f"
             ]
         ]
     },
     {
-        "id": "293576d7.9a1a6a",
+        "id": "86711e7c.795b5",
         "type": "time-range-switch",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "",
         "lat": "",
         "lon": "",
@@ -335,17 +330,17 @@
         "y": 342.1429262161255,
         "wires": [
             [
-                "a6c834bd.e5f698"
+                "febf9af6.6049b8"
             ],
             [
-                "3b3cb4e5.9f542c"
+                "3ff0250e.e71f3a"
             ]
         ]
     },
     {
-        "id": "f34dd9b2.a59b18",
+        "id": "295c2fe3.f317f",
         "type": "function",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "AFTERNOON",
         "func": "msg.payload=\"Good afternoon Welcome to baker and grey\"\nreturn msg;",
         "outputs": 1,
@@ -354,14 +349,14 @@
         "y": 402.3809356689453,
         "wires": [
             [
-                "9324ef01.7b3fc"
+                "70eda4fe.3256ac"
             ]
         ]
     },
     {
-        "id": "3b3cb4e5.9f542c",
+        "id": "3ff0250e.e71f3a",
         "type": "time-range-switch",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "",
         "lat": "",
         "lon": "",
@@ -373,17 +368,17 @@
         "y": 397.38091564178467,
         "wires": [
             [
-                "f34dd9b2.a59b18"
+                "295c2fe3.f317f"
             ],
             [
-                "1e246bc0.f25564"
+                "5e4d4d22.462354"
             ]
         ]
     },
     {
-        "id": "a0521a3d.fc1ef8",
+        "id": "11d351fb.3336de",
         "type": "function",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "EVENING",
         "func": "msg.payload=\"Good evening Welcome to baker and grey\"\nreturn msg;",
         "outputs": 1,
@@ -392,14 +387,14 @@
         "y": 470.71428203582764,
         "wires": [
             [
-                "9324ef01.7b3fc"
+                "70eda4fe.3256ac"
             ]
         ]
     },
     {
-        "id": "1e246bc0.f25564",
+        "id": "5e4d4d22.462354",
         "type": "time-range-switch",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "",
         "lat": "",
         "lon": "",
@@ -411,15 +406,15 @@
         "y": 445.95240116119385,
         "wires": [
             [
-                "a0521a3d.fc1ef8"
+                "11d351fb.3336de"
             ],
             []
         ]
     },
     {
-        "id": "93737ffc.3b6c1",
+        "id": "506ada01.966584",
         "type": "comment",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "A Person has been seen in the image",
         "info": "",
         "x": 631.6666564941406,
@@ -427,13 +422,23 @@
         "wires": []
     },
     {
-        "id": "9324ef01.7b3fc",
+        "id": "70eda4fe.3256ac",
         "type": "play audio",
-        "z": "22abd194.653d0e",
+        "z": "187bae60.f7d6a2",
         "name": "",
         "voice": "4",
         "x": 1253.3333129882812,
         "y": 763.3332824707031,
+        "wires": []
+    },
+    {
+        "id": "af50914f.8e2c6",
+        "type": "comment",
+        "z": "187bae60.f7d6a2",
+        "name": "USE YOUR API KEY",
+        "info": "",
+        "x": 1159.9999999999998,
+        "y": 158.33333333333331,
         "wires": []
     }
 ]
