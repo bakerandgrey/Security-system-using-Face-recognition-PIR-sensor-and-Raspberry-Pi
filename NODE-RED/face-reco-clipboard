@@ -1,0 +1,1 @@
+[{"id":"b69d8480.a85c28","type":"function","z":"22abd194.653d0e","name":"Email-Subject: Activity is detected","func":"msg.topic=\"Something is moving\"\nmsg.filename=new Date().toISOString().replace(/T/, ' ').replace(/\\..+/, '')+\".jpg\";\n\nreturn msg;","outputs":1,"noerr":0,"x":377.6666717529297,"y":680.0832958221436,"wires":[["8f16453.f4f46b8"]]}]
