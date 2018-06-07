@@ -40,4 +40,4 @@ Here, create a new database “**faces**” to store the information after analy
 
 The email sent also contains the snapshot captured by the IP Webcam. The project can be further extended by storing the faces detected into a database. Matching with the database can be done, to identify a visitor who visits repeatedly.  
 
-## Flow clipboard is given in this repository.
+***Flow clipboard is given in the folder*** **Security-system-using-Face-recognition-PIR-sensor-and-Raspberry-Pi/NODE-RED/.**
