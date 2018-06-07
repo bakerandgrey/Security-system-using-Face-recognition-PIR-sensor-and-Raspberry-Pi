@@ -6,7 +6,7 @@ We use PIR Sensor for detection and recognition is carried out by IBM Watson, wh
 
 ![1](https://user-images.githubusercontent.com/39903083/41078737-261f8c84-6a3c-11e8-9a19-c611f5b1bd9e.png)  
  
-Refer: http://www.instructables.com/id/Face-Detection-Security-System-Using-Pi-Node-red-I/.  
+Refer: http://www.instructables.com/id/Face-Detection-Security-System-Using-Pi-Node-red-I/ for more details. (Also thanks to TryxCorp)
 
 As the primary step check if all the necessary nodes, including Node-watson is installed.  
 
